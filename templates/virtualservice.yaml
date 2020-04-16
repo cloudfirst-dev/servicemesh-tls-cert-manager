@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: {{ include "tls-ingress.fullname" . }}
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - {{ include "tls-ingress.fullname" . }}
+  http:
+  - route:
+    - destination:
+        host: {{ include "tls-ingress.fullname" . }}
+        port:
+          number: {{ .Values.service.port }}

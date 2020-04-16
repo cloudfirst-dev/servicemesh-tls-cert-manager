@@ -1,0 +1,6 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: {{ include "tls-ingress.fullname" . }}
+spec:
+  host: {{ include "tls-ingress.fullname" . }}
