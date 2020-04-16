@@ -1,7 +1,7 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: {{ .Values.ingress.certName }}
+  name: istio-ingressgateway-certs
   namespace: {{ .Values.istio.controlPlaneNamespace }}
 spec:
   # needs to be hard coded due to service mesh only supporting mounting of secrets by volume and not by kube api
